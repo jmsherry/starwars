@@ -98,38 +98,6 @@ function setup() {
   }, gameSpeed);
 }
 
-document.addEventListener("keydown", function takeInput(e) {
-  e = e || window.event;
-  const keyPressed = e.key;
-  switch (keyPressed) {
-    case "Up": // IE/Edge specific value
-    case "ArrowUp":
-      player.move("up");
-      break;
-    case "Down": // IE/Edge specific value
-    case "ArrowDown":
-      player.move("down");
-      break;
-    case "Left": // IE/Edge specific value
-    case "ArrowLeft":
-      player.move("left");
-      break;
-    case "Right": // IE/Edge specific value
-    case "ArrowRight":
-      player.move("right");
-      break;
-    case "Enter":
-      player.fire();
-      break;
-    case "e":
-      player.destruct();
-      break;
-
-    default:
-      console.log(`${keyPressed} was pressed`);
-  }
-});
-
 document.addEventListener("game_over", function endGame(e) {
   const modal = document.createElement('div');
   const player = e.detail.player;
