@@ -3,7 +3,7 @@ import StarWarsShooter from './shooter.js';
 document.addEventListener('DOMContentLoaded', () => {
   const shooter = StarWarsShooter({
     difficulty: 'easy',
-    enemies: 1 //,
+    enemies: 3 // ,
     // enemyShipImage: 'https://images.freshop.com/5181/cd987dff8920b920722981024cefd891_medium.png',
     // playerShipImage: 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/tomato.png'
   });
@@ -17,24 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
       case "Up": // IE/Edge specific value
       case "ArrowUp":
         // move the player, with the player's move method
+        player.move("up");
         break;
-      case "Down": // IE/Edge specific value
+      case "Down":
       case "ArrowDown":
         // move the player, with the player's move method
+        player.move("down");
         break;
-      case "Left": // IE/Edge specific value
+      case "Left":
       case "ArrowLeft":
         // move the player, with the player's move method
+        player.move("left");
         break;
-      case "Right": // IE/Edge specific value
+      case "Right":
       case "ArrowRight":
         // move the player, with the player's move method
+        player.move("right");
         break;
       case "Enter":
         // use the player's fire method
-        break;
-      case "e":
-        player.destruct();
+        player.fire();
         break;
 
       default:
